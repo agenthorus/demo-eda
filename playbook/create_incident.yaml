@@ -1,0 +1,11 @@
+---
+- name: Raise inc in SNOW
+  hosts: localhost
+  gather_facts: false
+  connection: local
+
+  tasks:
+    - name: Simulate incident creation
+      debug:
+        msg: "Incident created"
+

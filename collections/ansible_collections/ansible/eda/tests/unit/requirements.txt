@@ -1,0 +1,11 @@
+aiobotocore
+aiohttp
+aiokafka
+asyncio
+asyncmock
+azure-servicebus
+dpath
+pytest<8  # https://github.com/ansible/ansible/issues/82713
+pytest-asyncio
+psycopg
+xxhash

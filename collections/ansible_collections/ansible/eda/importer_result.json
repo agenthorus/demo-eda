@@ -1,0 +1,325 @@
+{
+    "metadata": {
+        "namespace": "ansible",
+        "name": "eda",
+        "version": "1.4.7",
+        "license": [
+            "Apache-2.0"
+        ],
+        "description": "Event-Driven Ansible",
+        "repository": "https://github.com/ansible/event-driven-ansible",
+        "documentation": "https://github.com/ansible/event-driven-ansible",
+        "homepage": "http://ansible.com/event-driven",
+        "issues": "https://github.com/ansible/event-driven-ansible/issues",
+        "authors": [
+            "bthomass@redhat.com",
+            "jpisciot@redhat.com"
+        ],
+        "tags": [
+            "infrastructure",
+            "tools",
+            "eda"
+        ],
+        "license_file": null,
+        "readme": "README.md",
+        "dependencies": {}
+    },
+    "docs_blob": {
+        "collection_readme": {
+            "name": "README.md",
+            "html": "<h1>Collection for Event-Driven Ansible</h1>\n<p>This collection contains event source plugins, event filters and example rulebooks to be used with <a href=\"https://ansible-rulebook.readthedocs.io/en/stable/\">ansible-rulebook</a>.</p>\n<p>\n    <a href=\"https://github.com/ansible/event-driven-ansible/actions?workflow=integration-tests\"><img src=\"https://github.com/ansible/event-driven-ansible/actions/workflows/integration-tests.yml/badge.svg?event=schedule\"> </a>\n    <a href=\"https://github.com/ansible/event-driven-ansible/actions?workflow=linters\"><img src=\"https://github.com/ansible/event-driven-ansible/actions/workflows/linters.yml/badge.svg?event=schedule\"> </a>\n    <a href=\"https://github.com/ansible/event-driven-ansible/actions?workflow=tests\"><img src=\"https://github.com/ansible/event-driven-ansible/actions/workflows/tests.yml/badge.svg?event=schedule\"> </a>\n    <a href=\"https://github.com/ansible/event-driven-ansible/actions?workflow=tox\"><img src=\"https://github.com/ansible/event-driven-ansible/actions/workflows/tox.yml/badge.svg?event=schedule\"> </a>\n</p>\n\n<h2>Requirements</h2>\n<ul>\n<li>ansible-rulebook &gt;= 1.0.0</li>\n<li>python &gt;= 3.9</li>\n<li>ansible &gt;= 2.13</li>\n</ul>\n<h2>Install</h2>\n<p>Install the ansible.eda collection with the Ansible Galaxy CLI:</p>\n<pre><code>ansible-galaxy collection install ansible.eda\n</code></pre>\n<p>The python module dependencies are not installed by ansible-galaxy. They must be installed manually using pip:</p>\n<pre><code>pip install -r requirements.txt\n</code></pre>\n<h2>Contributing</h2>\n<p>Please refer to the <a href=\"./CONTRIBUTING.md\">contributing guide</a> for information about how you can contribute to the project.</p>"
+        },
+        "documentation_files": [],
+        "contents": [
+            {
+                "content_name": "test_role",
+                "content_type": "role",
+                "doc_strings": {},
+                "readme_file": "README.md",
+                "readme_html": "<h1>Role Name</h1>\n<p>This role calls the module upcase</p>\n<h2>Requirements</h2>\n<p>None</p>\n<h2>Role Variables</h2>\n<p>test_name</p>\n<h2>Dependencies</h2>\n<h2>Example Playbook</h2>\n<p>Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:</p>\n<pre><code>- hosts: servers\n  collections:\n    - ansible.eda\n  roles:\n     - { role: test_role, test_name: 42 }\n</code></pre>\n<h2>License</h2>\n<p>BSD</p>\n<h2>Author Information</h2>"
+            },
+            {
+                "content_name": "upcase",
+                "content_type": "module",
+                "doc_strings": {
+                    "doc": {
+                        "author": [
+                            "Test User (@yourGitHubHandle)"
+                        ],
+                        "collection": "ansible.eda",
+                        "description": "Upper cases a passed in string, if the passed in string is already uppercased changed is set to false. To have the module generate an error send the string fail",
+                        "filename": "/tmp/tmpir37j7of/ansible_collections/ansible/eda/plugins/modules/upcase.py",
+                        "has_action": false,
+                        "module": "upcase",
+                        "options": [
+                            {
+                                "name": "name",
+                                "description": "This is the string sent to the upcase module.",
+                                "required": true,
+                                "type": "str"
+                            }
+                        ],
+                        "short_description": "Upper cases a passed in string",
+                        "version_added": "1.0.0",
+                        "version_added_collection": "ansible.eda"
+                    },
+                    "examples": "\n# Pass in a message\n- name: Test with a lower string\n  ansible.eda.upcase:\n    name: hello world\n\n# pass in a message and have it fail\n- name: Test with a fail message\n  ansible.eda.upcase:\n    name: fail\n",
+                    "metadata": null,
+                    "return": [
+                        {
+                            "name": "message",
+                            "description": "The result message that the upcase module generates.",
+                            "returned": "always",
+                            "sample": "HELLO WORLD",
+                            "type": "str"
+                        }
+                    ]
+                },
+                "readme_file": null,
+                "readme_html": null
+            },
+            {
+                "content_name": "dashes_to_underscores",
+                "content_type": "eda/plugins/event_filter",
+                "doc_strings": null,
+                "readme_file": null,
+                "readme_html": null
+            },
+            {
+                "content_name": "noop",
+                "content_type": "eda/plugins/event_filter",
+                "doc_strings": null,
+                "readme_file": null,
+                "readme_html": null
+            },
+            {
+                "content_name": "json_filter",
+                "content_type": "eda/plugins/event_filter",
+                "doc_strings": null,
+                "readme_file": null,
+                "readme_html": null
+            },
+            {
+                "content_name": "insert_hosts_to_meta",
+                "content_type": "eda/plugins/event_filter",
+                "doc_strings": null,
+                "readme_file": null,
+                "readme_html": null
+            },
+            {
+                "content_name": "normalize_keys",
+                "content_type": "eda/plugins/event_filter",
+                "doc_strings": null,
+                "readme_file": null,
+                "readme_html": null
+            },
+            {
+                "content_name": "alertmanager",
+                "content_type": "eda/plugins/event_source",
+                "doc_strings": null,
+                "readme_file": null,
+                "readme_html": null
+            },
+            {
+                "content_name": "url_check",
+                "content_type": "eda/plugins/event_source",
+                "doc_strings": null,
+                "readme_file": null,
+                "readme_html": null
+            },
+            {
+                "content_name": "range",
+                "content_type": "eda/plugins/event_source",
+                "doc_strings": null,
+                "readme_file": null,
+                "readme_html": null
+            },
+            {
+                "content_name": "aws_cloudtrail",
+                "content_type": "eda/plugins/event_source",
+                "doc_strings": null,
+                "readme_file": null,
+                "readme_html": null
+            },
+            {
+                "content_name": "generic",
+                "content_type": "eda/plugins/event_source",
+                "doc_strings": null,
+                "readme_file": null,
+                "readme_html": null
+            },
+            {
+                "content_name": "kafka",
+                "content_type": "eda/plugins/event_source",
+                "doc_strings": null,
+                "readme_file": null,
+                "readme_html": null
+            },
+            {
+                "content_name": "journald",
+                "content_type": "eda/plugins/event_source",
+                "doc_strings": null,
+                "readme_file": null,
+                "readme_html": null
+            },
+            {
+                "content_name": "azure_service_bus",
+                "content_type": "eda/plugins/event_source",
+                "doc_strings": null,
+                "readme_file": null,
+                "readme_html": null
+            },
+            {
+                "content_name": "file_watch",
+                "content_type": "eda/plugins/event_source",
+                "doc_strings": null,
+                "readme_file": null,
+                "readme_html": null
+            },
+            {
+                "content_name": "pg_listener",
+                "content_type": "eda/plugins/event_source",
+                "doc_strings": null,
+                "readme_file": null,
+                "readme_html": null
+            },
+            {
+                "content_name": "file",
+                "content_type": "eda/plugins/event_source",
+                "doc_strings": null,
+                "readme_file": null,
+                "readme_html": null
+            },
+            {
+                "content_name": "webhook",
+                "content_type": "eda/plugins/event_source",
+                "doc_strings": null,
+                "readme_file": null,
+                "readme_html": null
+            },
+            {
+                "content_name": "tick",
+                "content_type": "eda/plugins/event_source",
+                "doc_strings": null,
+                "readme_file": null,
+                "readme_html": null
+            },
+            {
+                "content_name": "aws_sqs_queue",
+                "content_type": "eda/plugins/event_source",
+                "doc_strings": null,
+                "readme_file": null,
+                "readme_html": null
+            }
+        ]
+    },
+    "contents": [
+        {
+            "name": "test_role",
+            "content_type": "role",
+            "description": "your role description"
+        },
+        {
+            "name": "upcase",
+            "content_type": "module",
+            "description": "Upper cases a passed in string"
+        },
+        {
+            "name": "dashes_to_underscores",
+            "content_type": "eda/plugins/event_filter",
+            "description": null
+        },
+        {
+            "name": "noop",
+            "content_type": "eda/plugins/event_filter",
+            "description": null
+        },
+        {
+            "name": "json_filter",
+            "content_type": "eda/plugins/event_filter",
+            "description": null
+        },
+        {
+            "name": "insert_hosts_to_meta",
+            "content_type": "eda/plugins/event_filter",
+            "description": null
+        },
+        {
+            "name": "normalize_keys",
+            "content_type": "eda/plugins/event_filter",
+            "description": null
+        },
+        {
+            "name": "alertmanager",
+            "content_type": "eda/plugins/event_source",
+            "description": null
+        },
+        {
+            "name": "url_check",
+            "content_type": "eda/plugins/event_source",
+            "description": null
+        },
+        {
+            "name": "range",
+            "content_type": "eda/plugins/event_source",
+            "description": null
+        },
+        {
+            "name": "aws_cloudtrail",
+            "content_type": "eda/plugins/event_source",
+            "description": null
+        },
+        {
+            "name": "generic",
+            "content_type": "eda/plugins/event_source",
+            "description": null
+        },
+        {
+            "name": "kafka",
+            "content_type": "eda/plugins/event_source",
+            "description": null
+        },
+        {
+            "name": "journald",
+            "content_type": "eda/plugins/event_source",
+            "description": null
+        },
+        {
+            "name": "azure_service_bus",
+            "content_type": "eda/plugins/event_source",
+            "description": null
+        },
+        {
+            "name": "file_watch",
+            "content_type": "eda/plugins/event_source",
+            "description": null
+        },
+        {
+            "name": "pg_listener",
+            "content_type": "eda/plugins/event_source",
+            "description": null
+        },
+        {
+            "name": "file",
+            "content_type": "eda/plugins/event_source",
+            "description": null
+        },
+        {
+            "name": "webhook",
+            "content_type": "eda/plugins/event_source",
+            "description": null
+        },
+        {
+            "name": "tick",
+            "content_type": "eda/plugins/event_source",
+            "description": null
+        },
+        {
+            "name": "aws_sqs_queue",
+            "content_type": "eda/plugins/event_source",
+            "description": null
+        }
+    ],
+    "custom_license": null,
+    "requires_ansible": ">=2.14.0"
+}

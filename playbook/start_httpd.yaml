@@ -1,0 +1,12 @@
+---
+- name: Start Apache HTTPD Service
+  hosts: all
+  become: yes  
+
+  tasks:
+
+    - name: Start and enable httpd service
+      ansible.builtin.systemd:
+        name: httpd
+        state: started
+        enabled: yes

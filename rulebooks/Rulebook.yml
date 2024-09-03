@@ -8,7 +8,7 @@
         port: 5001
   rules:
     - name: Web Server process down
-      condition: event.payload.message == "Apache server is down"
+      condition: event.payload.text == "Apache server is down"
   ## Define the action we should take should the condition be met
       run_job_template:
         name: StartHTTPD

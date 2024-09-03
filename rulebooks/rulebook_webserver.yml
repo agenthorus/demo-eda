@@ -14,6 +14,5 @@
           name: WFJT-Remediate-Web-Server
           organization: Default
           job_args:
-            extra_vars:
-              message: from eda
-              sleep: 10
+            message: from eda
+            sleep: 10

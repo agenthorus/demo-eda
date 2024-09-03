@@ -10,8 +10,8 @@
     - name: Web Server process down
       condition: event.payload.text == "Apache server is down on client-vm"
       action:
-        run_job_template:
-          name: StartHTTPD
+        run_workflow_template:
+          name: WFJT-Remediate-Web-Server
           organization: Default
           job_args:
             extra_vars:

@@ -1,4 +1,0 @@
-#collections:
-#  - name: infra.eda_configuration
-#  - name: containers.podman
-#  - name: ansible.eda

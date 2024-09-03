@@ -15,5 +15,5 @@
           organization: Default
           job_args:
             extra_vars:
-               message: from eda
-               sleep: 1
+              message: from eda
+              sleep: 10

@@ -5,6 +5,11 @@
   connection: local
 
   tasks:
+
+    - name: Pause to Demo
+      ansible.builtin.pause:
+        seconds: 10
+
     - name: Simulate incident creation
       debug:
         msg: "Incident created"
